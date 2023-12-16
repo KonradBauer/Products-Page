@@ -1,4 +1,4 @@
-function App() {
+export const App = () => {
   return (
     <div className="bg-blue-200">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime fuga saepe qui dolores
@@ -6,6 +6,6 @@ function App() {
       accusantium eius fugit excepturi dolorum reprehenderit.
     </div>
   );
-}
+};
 
 export default App;
