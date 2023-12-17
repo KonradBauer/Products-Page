@@ -11,17 +11,12 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-between mx-16 lg:mx-24">
-      <div className="p-4 lg:p-6">
+    <div className="flex items-center justify-between p-4 mx-8 lg:p-6">
+      <div>
         <img src={bookmark} alt="Bookmark" className="bookmark-icon" />
       </div>
       <div className="md:hidden">
-        <button
-          className="burger-btn"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-          style={{ width: "30px" }}
-        >
+        <button className="burger-btn" onClick={toggleMenu} aria-label="Toggle menu">
           <img src={burgerButton} alt="BurgerButton" className="hamburger-icon" />
         </button>
       </div>
