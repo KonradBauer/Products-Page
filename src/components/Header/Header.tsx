@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
         </button>
       </div>
       <ul
-        className={`menu menu-horizontal uppercase gap-8 flex items-center ${
+        className={`menu menu-horizontal uppercase gap-6 flex items-center ${
           isMenuOpen ? "hidden md:flex" : ""
         }`}
       >
