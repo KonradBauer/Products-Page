@@ -6,11 +6,8 @@ export const Header: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center tracking-wider mx-16 lg:mx-24">
       <div className="mx-8 lg:mx-12 p-4 lg:p-6">
-        <a href="#">
-          <img src={bookmark} alt="Bookmark" className="bookmark-icon" />
-        </a>
+        <img src={bookmark} alt="Bookmark" className="bookmark-icon" />
       </div>
-
       <div className="flex-grow flex justify-end mx-8 lg:mx-12">
         <ul className="menu menu-horizontal uppercase gap-8 flex items-center">
           {navigation.map((navi) => (
@@ -18,11 +15,9 @@ export const Header: React.FC = () => {
               <a className="hover:text-lightRed hover:bg-transparent">{navi}</a>
             </li>
           ))}
-          <li>
-            <a className="bg-lightRed text-white px-9 py-3 shadow-md hover:bg-white hover:text-lightRed hover:border-solid hover:border-4 hover:border-current hover:shadow-lg">
-              login
-            </a>
-          </li>
+          <button className="btn btn-error uppercase text-white px-10 pt-1 tracking-wider shadow-lg hover:bg-white hover:text-lightRed hover:">
+            login
+          </button>
         </ul>
       </div>
     </div>
