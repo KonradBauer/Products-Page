@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
       </div>
       <ul
         className={`menu menu-horizontal uppercase gap-8 flex items-center ${
-          isMenuOpen ? "hidden md:flex" : "md:flex hidden"
+          isMenuOpen ? "hidden md:flex" : ""
         }`}
       >
         {navigation.map((navi) => (
