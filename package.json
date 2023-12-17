@@ -1,6 +1,7 @@
 {
   "name": "productspage",
   "private": true,
+  "homepage": "https://konradbauer.github.io/Products-Page/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
