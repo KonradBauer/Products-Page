@@ -3,7 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: { lightRed: "#FF4D26", darkBlue: "#1a2e3b", lightGrey: "#a7b5c5" },
+      colors: {
+        lightRed: "hsl(0, 94%, 66%)",
+        darkBlue: "hsl(229, 31%, 21%)",
+        lightGrey: "hsl(229, 8%, 60%)",
+        lightBlue: "hsl(231, 69%, 60%)",
+      },
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],
       },
