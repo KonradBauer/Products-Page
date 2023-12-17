@@ -1,9 +1,11 @@
+import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 
-export const App = () => {
+export const App: React.FC = () => {
   return (
-    <div className="max-w-6xl m-auto pt-8 font-rubik font-bold">
+    <div className=" m-auto pt-8 font-rubik font-bold">
       <Header />
+      <Footer />
     </div>
   );
 };
