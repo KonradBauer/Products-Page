@@ -7,8 +7,8 @@ export const Footer: React.FC = () => {
 
   return (
     <div className="navbar flex flex-col lg:flex-row justify-between tracking-wider bg-darkBlue p-6 lg:px-[56px] sm:flex-wrap">
-      <img src={bookmark} alt="Bookmark" className="bookmark-icon text-white" />
-      <div className="mx-8 lg:mx-12 p-4 lg:p-6 flex flex-1 ">
+      <img src={bookmark} alt="Bookmark" className="bookmark-icon fill-current text-white" />
+      <div className="mx-8 lg:mx-12 p-4 lg:p-6 flex flex-1">
         <ul className="menu menu-horizontal uppercase gap-6 flex mt-4 lg:mt-0 lg:ml-10 max-md:flex-col">
           {navigation.map((navi) => (
             <li key={navi}>
@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
           ))}
         </ul>
       </div>
-      <div className="flex gap-10 mx-16">
+      <div className="flex gap-10 mx-6">
         <a className="facebook-icon cursor-pointer">
           <img src={facebook} alt="Facebook" />
         </a>
