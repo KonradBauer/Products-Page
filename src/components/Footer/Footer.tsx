@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
 
   return (
     <div className="navbar flex flex-col lg:flex-row justify-between tracking-wider bg-darkBlue p-6 lg:px-[56px] sm:flex-wrap">
-      <img src={bookmark} alt="Bookmark" className="bookmark-icon fill-current text-white" />
+      <img src={bookmark} alt="Bookmark" className="bookmark-icon text-white" />
       <div className="mx-8 lg:mx-12 p-4 lg:p-6 flex flex-1">
         <ul className="menu menu-horizontal uppercase gap-6 flex mt-4 lg:mt-0 lg:ml-10 max-md:flex-col">
           {navigation.map((navi) => (
