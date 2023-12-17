@@ -6,12 +6,12 @@ export const Footer: React.FC = () => {
   const navigation = ["features", "pricing", "contact"];
 
   return (
-    <div className="navbar justify-between tracking-wider bg-darkBlue">
-      <div className="mx-44 p-6">
+    <div className="navbar flex flex-col lg:flex-row items-center justify-between tracking-wider bg-darkBlue p-6 lg:px-24">
+      <div className="mx-8 lg:mx-12 p-4 lg:p-6">
         <a>
           <img src={bookmark} alt="Bookmark" className="bookmark-icon flex-shrink" />
         </a>
-        <ul className="menu menu-horizontal uppercase gap-6 flex items-center ml-10">
+        <ul className="menu menu-horizontal uppercase gap-6 flex items-center mt-4 lg:mt-0 lg:ml-10">
           {navigation.map((navi) => (
             <li key={navi}>
               <a className="text-lightGrey hover:text-lightRed hover:bg-transparent">{navi}</a>
@@ -19,9 +19,13 @@ export const Footer: React.FC = () => {
           ))}
         </ul>
       </div>
-      <div className="text-white gap-12 mr-36">
-        <img src={facebook} alt="Facebook" className="facebook-icon cursor-pointer" />
-        <img src={twitter} alt="Twitter" className="twitter-icon cursor-pointer" />
+      <div className="flex gap-10 mx-16">
+        <a className="facebook-icon cursor-pointer">
+          <img src={facebook} alt="Facebook" />
+        </a>
+        <a className="twitter-icon cursor-pointer">
+          <img src={twitter} alt="Twitter" />
+        </a>
       </div>
     </div>
   );
