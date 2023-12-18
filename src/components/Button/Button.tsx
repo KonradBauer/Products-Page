@@ -1,8 +1,8 @@
 interface ButtonProps {
-  text: string;
+  text?: string;
   capitalize?: boolean;
   width?: boolean;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Button: React.FC<ButtonProps> = ({ onClick, text, capitalize = false, width }) => {
