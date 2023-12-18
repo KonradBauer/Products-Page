@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import bookmark from "../../images/logo-bookmark.svg";
 import burgerButton from "../../images/icon-hamburger.svg";
+import { Button } from "../Button/Button";
 
 export const Header: React.FC = () => {
   const navigation = ["features", "pricing", "contact"];
@@ -30,9 +31,7 @@ export const Header: React.FC = () => {
             <a className="hover:text-lightRed hover:bg-transparent">{navi}</a>
           </li>
         ))}
-        <button className="btn btn-error uppercase text-white px-10 pt-1 tracking-wider shadow-lg hover:bg-white hover:text-lightRed hover:">
-          login
-        </button>
+        <Button text="login" />
       </ul>
     </div>
   );
