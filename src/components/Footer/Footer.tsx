@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import bookmark from "../../images/logo-bookmark-white.svg";
 import facebook from "../../images/icon-facebook.svg";
 import twitter from "../../images/icon-twitter.svg";
+import error from "../../images/icon-error.svg";
 import { Button } from "../Button/Button";
 
 interface FooterProps {}
@@ -13,7 +14,7 @@ interface NavigationItem {
 interface State {
   populationText: string;
   email: string;
-  isValidEmail: boolean;
+  isValidEmail: boolean | null;
 }
 
 const initialPopulation = 35000;
@@ -29,14 +30,14 @@ export const Footer: React.FC<FooterProps> = () => {
   const [state, setState] = useState<State>({
     populationText: `${initialPopulation}+ already joined`,
     email: "",
-    isValidEmail: true,
+    isValidEmail: null,
   });
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setState((prevState) => ({
       ...prevState,
       email: e.target.value,
-      isValidEmail: validateEmail(e.target.value),
+      isValidEmail: null,
     }));
   };
 
@@ -46,7 +47,13 @@ export const Footer: React.FC<FooterProps> = () => {
   };
 
   const handleButtonClick = () => {
-    if (state.isValidEmail) {
+    const isValid = validateEmail(state.email);
+    setState((prevState) => ({
+      ...prevState,
+      isValidEmail: isValid,
+    }));
+
+    if (isValid) {
       console.log("Email is valid:", state.email);
     } else {
       console.log("Invalid email address");
@@ -79,15 +86,23 @@ export const Footer: React.FC<FooterProps> = () => {
         <span className="text-3xl max-sm:text-2xl flex justify-center text-center mt-10 mb-6 max-sm:mt-2 mx-0 font-bold tracking-wide lg:max-w-md">
           Stay up-to-date with what we're doing
         </span>
-        <div className="max-sm:flex-wrap mb-16 lg:w-2/4 flex justify-center items-center">
+        <div className="max-sm:flex-wrap mb-16 lg:w-2/4 flex justify-center items-center relative">
           <input
             className={`input input-bordered rounded-md join-item w-[40%] max-sm:w-[95%] text-black lg:mr-4 md:mr-4 max-sm:mb-4 ${
-              state.isValidEmail ? "" : "border-error"
+              state.isValidEmail === false ? "border-error" : ""
             }`}
             placeholder="Enter your email address"
             value={state.email}
             onChange={handleEmailChange}
           />
+          {state.isValidEmail === false && (
+            <div className="error-container">
+              <img src={error} alt="Error" className="error-icon" />
+              <div className="error-message">
+                <strong>Whoops!</strong> Make sure it's an email.
+              </div>
+            </div>
+          )}
           <Button text="contact us" capitalize width onClick={handleButtonClick} />
         </div>
       </div>
