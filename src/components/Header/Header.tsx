@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-between p-4 mx-8 lg:p-6">
+    <div className="flex items-center justify-between p-4 mx-8 lg:p-6 font-rubik0-500">
       <div>
         <img src={bookmark} alt="Bookmark" className="bookmark-icon" />
       </div>

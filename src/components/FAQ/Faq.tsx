@@ -6,7 +6,7 @@ export const Faq = () => {
       <div className="text-[42px] font-bold max-md:text-[25px] max-md:mx-6">
         Frequently Asked Questions
       </div>
-      <div className="text-2xl text-lightGrey mx-96 mt-6 max-md:text-[16px] max-md:mx-8">
+      <div className="text-2xl text-lightGrey mx-96 mt-6 mb-24 max-md:mb-16 max-md:text-[16px] max-md:mx-8">
         Here are some of our FAQs. If you have any other questions you'd like answered please feel
         free to email us.
       </div>
