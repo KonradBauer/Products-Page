@@ -1,4 +1,4 @@
-import bookmark from "../../images/logo-bookmark.svg";
+import bookmark from "../../images/logo-bookmark-white.svg";
 import facebook from "../../images/icon-facebook.svg";
 import twitter from "../../images/icon-twitter.svg";
 
