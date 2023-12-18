@@ -19,17 +19,14 @@ export const Footer: React.FC = () => {
   };
 
   const validateEmail = (email: string) => {
-    // Prosta walidacja emaila, możesz dostosować według swoich potrzeb
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
   const handleButtonClick = () => {
     if (isValidEmail) {
-      // Obsługa logiki, gdy email jest poprawny
       console.log("Email is valid:", email);
     } else {
-      // Obsługa logiki, gdy email jest niepoprawny
       console.log("Invalid email address");
     }
   };
