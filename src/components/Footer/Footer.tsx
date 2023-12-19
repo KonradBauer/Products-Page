@@ -87,7 +87,7 @@ export const Footer: React.FC<FooterProps> = () => {
           Stay up-to-date with what we're doing
         </span>
         <div className="max-sm:flex-wrap mb-16 lg:w-2/4 flex justify-center items-center relative">
-          <div className="max-md:flex-1 max-md:mx-3">
+          <div className="max-md:flex-1 mx-4">
             <input
               className={`input rounded-md w-full max-sm:w-[100%] text-black lg:mr-4 md:mr-4 bg-[${(
                 <Error />
