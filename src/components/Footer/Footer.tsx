@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import bookmark from "../../images/logo-bookmark-white.svg";
-import error from "../../images/icon-error.svg";
 import { Facebook } from "../SvgComponents/FacebookIcon";
 import { Button } from "../Button/Button";
 import { Twitter } from "../SvgComponents/TwitterIcon";
+import { Error } from "../SvgComponents/ErrorIcon";
 
 interface FooterProps {}
 
@@ -87,23 +87,24 @@ export const Footer: React.FC<FooterProps> = () => {
           Stay up-to-date with what we're doing
         </span>
         <div className="max-sm:flex-wrap mb-16 lg:w-2/4 flex justify-center items-center relative">
-          <input
-            className={`input input-bordered rounded-md join-item w-[40%] max-sm:w-[95%] text-black lg:mr-4 md:mr-4 max-sm:mb-4 ${
-              state.isValidEmail === false ? "border-error" : ""
-            }`}
-            placeholder="Enter your email address"
-            value={state.email}
-            onChange={handleEmailChange}
-          />
-          {state.isValidEmail === false && (
-            <div className="error-container">
-              <img src={error} alt="Error" className="error-icon" />
-              <div className="error-message">
-                <strong>Whoops!</strong> Make sure it's an email.
+          <div className="max-md:flex-1 max-md:mx-3">
+            <input
+              className={`input rounded-md w-full max-sm:w-[100%] text-black lg:mr-4 md:mr-4 bg-[${(
+                <Error />
+              )}] ${state.isValidEmail === false ? <Error /> : ""}`}
+              placeholder="Enter your email address"
+              value={state.email}
+              onChange={handleEmailChange}
+            />
+            {state.isValidEmail === false && (
+              <div>
+                <div className="w-full bg-lightRed px-6 mb-4 rounded-md">
+                  Whoops! Make sure it's an email.
+                </div>
               </div>
-            </div>
-          )}
-          <Button text="contact us" capitalize width onClick={handleButtonClick} />
+            )}
+          </div>
+          <Button text="contact us" marginTop capitalize width onClick={handleButtonClick} />
         </div>
       </div>
 
