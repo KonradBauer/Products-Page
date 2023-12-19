@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import bookmark from "../../images/logo-bookmark-white.svg";
-import { Facebook } from "../SvgComponents/FacebookIcon";
 import error from "../../images/icon-error.svg";
+import { Facebook } from "../SvgComponents/FacebookIcon";
 import { Button } from "../Button/Button";
 import { Twitter } from "../SvgComponents/TwitterIcon";
 
@@ -121,10 +121,10 @@ export const Footer: React.FC<FooterProps> = () => {
           </ul>
         </div>
         <div className="flex gap-10 mx-6">
-          <a className="facebook-icon cursor-pointer">
+          <a className="cursor-pointer">
             <Facebook />
           </a>
-          <a className="twitter-icon cursor-pointer">
+          <a className="cursor-pointer">
             <Twitter />
           </a>
         </div>
