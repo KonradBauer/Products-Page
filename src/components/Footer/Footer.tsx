@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import bookmark from "../../images/logo-bookmark-white.svg";
-import facebook from "../../images/icon-facebook.svg";
-import twitter from "../../images/icon-twitter.svg";
+import { Facebook } from "../SvgComponents/FacebookIcon";
 import error from "../../images/icon-error.svg";
 import { Button } from "../Button/Button";
+import { Twitter } from "../SvgComponents/TwitterIcon";
 
 interface FooterProps {}
 
@@ -122,10 +122,10 @@ export const Footer: React.FC<FooterProps> = () => {
         </div>
         <div className="flex gap-10 mx-6">
           <a className="facebook-icon cursor-pointer">
-            <img src={facebook} alt="Facebook" />
+            <Facebook />
           </a>
           <a className="twitter-icon cursor-pointer">
-            <img src={twitter} alt="Twitter" />
+            <Twitter />
           </a>
         </div>
       </div>
