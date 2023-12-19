@@ -1,3 +1,4 @@
+import React from "react";
 import { Card } from "../Card/Card";
 import chrome from "../../images/logo-chrome.svg";
 import firefox from "../../images/logo-firefox.svg";
@@ -13,19 +14,28 @@ export const Extension: React.FC = () => {
         We've got more browsers in the pipeline. Please do let us know if you've got a favourite
         you'd like us to prioritize.
       </div>
-      <div className="flex justify-center gap-8 max-lg:mx-24 max-md:mx-0 mb-32 flex-wrap">
-        <Card searchEngine="Chrome" version="62" image={chrome} alt="chrome search engine logo" />
-        <div className="">
-          <Card
-            searchEngine="Firefox"
-            version="55"
-            image={firefox}
-            alt="firefox search engine logo"
-          />
-        </div>
-        <div>
-          <Card searchEngine="Opera" version="46" image={opera} alt="opera search engine logo" />
-        </div>
+      <div className="flex justify-center gap-10 max-lg:mx-24 max-md:mx-0 mb-32 flex-wrap">
+        <Card
+          searchEngine="Chrome"
+          version="62"
+          image={chrome}
+          alt="chrome search engine logo"
+          customClassName="mb-20"
+        />
+        <Card
+          searchEngine="Firefox"
+          version="55"
+          image={firefox}
+          alt="firefox search engine logo"
+          customClassName="mb-10 mt-10"
+        />
+        <Card
+          searchEngine="Opera"
+          version="46"
+          image={opera}
+          alt="opera search engine logo"
+          customClassName="mt-20"
+        />
       </div>
     </div>
   );
