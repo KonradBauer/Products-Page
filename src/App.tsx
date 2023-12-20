@@ -10,7 +10,7 @@ export const App: React.FC = () => {
     <div className="m-auto pt-8 font-rubik-500">
       <Header />
       <Subheader />
-      {/* <Features /> */}
+      <Features />
       <Extension />
       <Faq />
       <Footer />
