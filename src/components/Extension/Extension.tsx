@@ -10,7 +10,7 @@ export const Extension: React.FC = () => {
       <div className="text-[42px] font-bold max-md:text-[25px] max-md:mx-2">
         Download the extension
       </div>
-      <div className="text-2xl text-lightGrey mx-96 mt-6 mb-24 max-md:mb-16 max-md:text-[16px] max-md:mx-8 max-lg:mx-24">
+      <div className="text-2xl text-lightGrey font-semibold mx-96 mt-6 mb-24 max-md:mb-16 max-md:text-[16px] max-md:mx-8 max-lg:mx-24">
         We've got more browsers in the pipeline. Please do let us know if you've got a favourite
         you'd like us to prioritize.
       </div>

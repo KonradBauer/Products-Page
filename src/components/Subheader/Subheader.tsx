@@ -10,7 +10,7 @@ export const Subheader = () => {
             <h1 className="text-5xl font-bold max-w-lg max-md:text-[28px] max-md:flex max-lg:text-center max-md:justify-center">
               A Simple Bookmark Manager
             </h1>
-            <p className="py-6 text-lightGrey text-2xl max-w-lg max-md:mx-4 max-md:text-center max-md:text-[16px]">
+            <p className="py-6 text-lightGrey font-semibold text-2xl max-w-lg max-md:mx-4 max-md:text-center max-md:text-[16px]">
               A clean and simple interface to organize your favourite websites. Open a new browser
               tab and see you sites load instantly. Try it for free.
             </p>
