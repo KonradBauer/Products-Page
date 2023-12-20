@@ -15,6 +15,7 @@ interface State {
   populationText: string;
   email: string;
   isValidEmail: boolean | null;
+  showToast: boolean;
 }
 
 const initialPopulation = 35000;
@@ -31,6 +32,7 @@ export const Footer: React.FC<FooterProps> = () => {
     populationText: `${initialPopulation}+ already joined`,
     email: "",
     isValidEmail: null,
+    showToast: false,
   });
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,20 +43,25 @@ export const Footer: React.FC<FooterProps> = () => {
     }));
   };
 
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
+  const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleButtonClick = () => {
     const isValid = validateEmail(state.email);
     setState((prevState) => ({
       ...prevState,
       isValidEmail: isValid,
+      showToast: isValid,
     }));
 
     if (isValid) {
       console.log("Email is valid:", state.email);
+
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          showToast: false,
+        }));
+      }, 3000);
     } else {
       console.log("Invalid email address");
     }
@@ -80,7 +87,7 @@ export const Footer: React.FC<FooterProps> = () => {
   return (
     <>
       <div className="bg-lightBlue text-white flex flex-col items-center p-4 max-sm:pb-0 flex-wrap font-rubik-500">
-        <span className="text text-sm font-normal uppercase tracking-widest w-full flex justify-center mt-14">
+        <span className="text-sm font-normal uppercase tracking-widest w-full flex justify-center mt-14">
           {state.populationText}
         </span>
         <span className="text-3xl max-sm:text-2xl flex justify-center text-center mt-10 mb-6 max-sm:mt-2 mx-0 font-bold tracking-wide lg:max-w-md">
@@ -89,9 +96,9 @@ export const Footer: React.FC<FooterProps> = () => {
         <div className="max-sm:flex-wrap mb-16 lg:w-2/4 flex justify-center items-center relative">
           <div className="max-md:flex-1 mx-4">
             <input
-              className={`input rounded-md w-full max-sm:w-[100%] text-black lg:mr-4 md:mr-4 bg-[${(
-                <Error />
-              )}] ${state.isValidEmail === false ? <Error /> : ""}`}
+              className={`input rounded-md w-full max-sm:w-[100%] text-black lg:mr-4  ${
+                state.isValidEmail === false ? <Error /> : ""
+              }`}
               placeholder="Enter your email address"
               value={state.email}
               onChange={handleEmailChange}
@@ -107,6 +114,12 @@ export const Footer: React.FC<FooterProps> = () => {
           <Button text="contact us" marginTop capitalize width onClick={handleButtonClick} />
         </div>
       </div>
+
+      {state.showToast && (
+        <div className="fixed bottom-4 right-4 z-50">
+          <div className="bg-green-500 text-white py-2 px-4 rounded">Success!</div>
+        </div>
+      )}
 
       <div className="navbar flex flex-col lg:flex-row justify-between tracking-wider bg-darkBlue p-6 lg:px-[56px] sm:flex-wrap font-bold">
         <img src={bookmark} alt="Bookmark" className="bookmark-icon text-white" />
