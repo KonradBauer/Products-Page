@@ -1,7 +1,7 @@
 export const Twitter = () => {
   return (
     <svg
-      className="fill-current text-white hover:text-lightRed transition-colors duration-300"
+      className="fill-current text-white hover:text-lightRed transition-colors duration-200"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="20"
