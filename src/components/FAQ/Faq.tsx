@@ -11,18 +11,22 @@ export const Faq = () => {
         free to email us.
       </div>
       <Collapse
+        customClassName="max-md: px-5"
         title="What is Bookmark?"
         content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis deleniti ea nam tenetur suscipit quam sunt, deserunt voluptas id vel quibusdam molestias, praesentium, magni consequuntur doloremque nulla minima dolore illo?"
       />
       <Collapse
+        customClassName="max-md: px-5"
         title="How can I request a new browser?"
         content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis deleniti ea nam tenetur suscipit quam sunt, deserunt voluptas id vel quibusdam molestias, praesentium, magni consequuntur doloremque nulla minima dolore illo?"
       />
       <Collapse
+        customClassName="max-md: px-5"
         title="Is there a mobile app?"
         content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis deleniti ea nam tenetur suscipit quam sunt, deserunt voluptas id vel quibusdam molestias, praesentium, magni consequuntur doloremque nulla minima dolore illo?"
       />
       <Collapse
+        customClassName="max-md: px-5"
         title="What about other Chromium browsers?"
         content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis deleniti ea nam tenetur suscipit quam sunt, deserunt voluptas id vel quibusdam molestias, praesentium, magni consequuntur doloremque nulla minima dolore illo?"
       />
