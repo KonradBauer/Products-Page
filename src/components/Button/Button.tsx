@@ -1,5 +1,5 @@
 interface ButtonProps {
-  text?: string;
+  text: string;
   capitalize?: boolean;
   width?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
