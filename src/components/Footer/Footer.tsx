@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = () => {
 
   return (
     <>
-      <div className="bg-lightBlue text-white flex flex-col items-center p-4 max-sm: pb-0 flex-wrap font-rubik-500">
+      <div className="bg-lightBlue text-white flex flex-col items-center p-4 max-sm:pb-0 flex-wrap font-rubik-500">
         <span className="text text-sm font-normal uppercase tracking-widest w-full flex justify-center mt-14">
           {state.populationText}
         </span>
