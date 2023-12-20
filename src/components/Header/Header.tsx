@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-between mx-20 lg:p-6 font-rubik-500">
+    <div className="flex items-center justify-between mx-20 lg:p-6 font-rubik-500 max-md:mx-8 max-md:mt-2">
       <div>
         <img src={bookmark} alt="Bookmark" className="bookmark-icon" />
       </div>
@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
       >
         {navigation.map((navi) => (
           <li key={navi}>
-            <a className="hover:text-lightRed hover:bg-transparent">{navi}</a>
+            <a className="hover:text-lightRed hover:bg-transparent font-bold">{navi}</a>
           </li>
         ))}
         <Button text="login" />
