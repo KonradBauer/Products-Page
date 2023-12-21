@@ -84,9 +84,22 @@ export const Footer: React.FC<FooterProps> = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <>
-      <div className="bg-lightBlue text-white flex flex-col items-center p-4 max-sm:pb-0 flex-wrap font-rubik-500">
+      <div
+        className="bg-lightBlue text-white flex flex-col items-center p-4 max-sm:pb-0 flex-wrap font-rubik-500"
+        id="contact"
+      >
         <span className="text-sm font-normal uppercase tracking-widest w-full flex justify-center mt-14">
           {state.populationText}
         </span>
@@ -127,7 +140,10 @@ export const Footer: React.FC<FooterProps> = () => {
           <ul className="menu menu-horizontal uppercase gap-6 flex mt-4 lg:mt-0 lg:ml-10 max-md:flex-col items-center">
             {navigation.map((navi) => (
               <li key={navi.key}>
-                <a className="text-lightGrey hover:text-lightRed hover:bg-transparent">
+                <a
+                  className="text-lightGrey hover:text-lightRed hover:bg-transparent"
+                  onClick={() => scrollToSection(navi.key)}
+                >
                   {navi.key}
                 </a>
               </li>

@@ -2,7 +2,7 @@ import { Collapse } from "../Collapse/Collapse";
 
 export const Faq = () => {
   return (
-    <div className="text-center">
+    <div className="text-center" id="pricing">
       <div className="text-[42px] font-bold max-md:text-[25px] max-md:mx-6">
         Frequently Asked Questions
       </div>

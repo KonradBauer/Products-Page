@@ -28,9 +28,19 @@ export const Header: React.FC = () => {
     };
   }, [isMenuOpen]);
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <div className="relative">
-      {isMenuOpen && <div className="fixed inset-0 bg-darkBlue z-50" onClick={toggleMenu} />}
+      {isMenuOpen && <div className="fixed inset-0 bg-darkBlue z-50" />}
       <div className="flex items-center justify-between mx-20 lg:p-6 font-rubik-500 max-md:mx-8 max-md:mt-2 relative z-50">
         {isMenuOpen && (
           <div className="flex flex-row flex-1">
@@ -62,7 +72,10 @@ export const Header: React.FC = () => {
                     className={`hover:text-lightRed hover:bg-transparent font-bold p-4 ${
                       isMenuOpen ? "text-white font-md rounded-none mt-4 font-normal text-xl" : ""
                     }`}
-                    onClick={toggleMenu}
+                    onClick={() => {
+                      toggleMenu();
+                      scrollToSection(navi);
+                    }}
                   >
                     {navi}
                   </a>
@@ -87,7 +100,14 @@ export const Header: React.FC = () => {
           <ul className="menu menu-horizontal uppercase flex items-center">
             {navigation.map((navi) => (
               <li key={navi}>
-                <a className="hover:text-lightRed hover:bg-transparent font-bold">{navi}</a>
+                <a
+                  className="hover:text-lightRed hover:bg-transparent font-bold"
+                  onClick={() => {
+                    scrollToSection(navi);
+                  }}
+                >
+                  {navi}
+                </a>
               </li>
             ))}
           </ul>

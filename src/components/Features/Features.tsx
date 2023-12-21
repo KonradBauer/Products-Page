@@ -51,7 +51,7 @@ export const Features: React.FC = () => {
     "text-lightRed border-lightRed hover:text-red-500 focus:border-b-1 border-red-500";
 
   return (
-    <div className="text-center font-rubik-500 mt-24">
+    <div className="text-center font-rubik-500 mt-24" id="features">
       <div className="text-[42px] font-bold max-md:text-[25px] max-md:mx-2">Features</div>
       <div className="text-2xl text-lightGrey font-semibold mx-96 mt-6 mb-24 max-md:mb-8 max-md:text-[16px] max-md:mx-8 max-lg:mx-24">
         Our aim is to make it quick and easy for you to access your favourite websites. Your
@@ -69,7 +69,7 @@ export const Features: React.FC = () => {
                 tab.label === selectedTab
                   ? `text-black font-bold border-b-1 ${redColor}`
                   : "text-lightGrey hover:text-lightRed border-lightRed"
-              } w-72`} // Tailwind CSS class for width: 300px
+              } w-72`}
             >
               <input
                 type="radio"
