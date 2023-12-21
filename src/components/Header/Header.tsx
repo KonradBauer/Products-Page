@@ -38,18 +38,37 @@ export const Header: React.FC = () => {
     }
   };
 
+  const openModal = () => {
+    const modal = document.getElementById("modal");
+    if (modal) {
+      modal.showModal();
+    }
+  };
+
+  setTimeout(() => {
+    openModal();
+  }, 30000);
+
   return (
     <div className="relative">
       {isMenuOpen && <div className="fixed inset-0 bg-darkBlue z-50" />}
+
       <div className="flex items-center justify-between mx-20 lg:p-6 font-rubik-500 max-md:mx-8 max-md:mt-2 relative z-50">
         {isMenuOpen && (
           <div className="flex flex-row flex-1">
-            <img src={navbookmark} alt="Bookmark" className="" />
+            <img src={navbookmark} alt="Bookmark" />
           </div>
         )}
+
         <div className="flex flex-row">
-          <img src={bookmark} alt="Bookmark" className={`${isMenuOpen ? "hidden" : ""}`} />
+          <img
+            src={bookmark}
+            alt="Bookmark"
+            className={`${isMenuOpen ? "hidden" : ""}`}
+            onMouseEnter={openModal}
+          />
         </div>
+
         <div className="md:hidden">
           <button className="burger-btn" onClick={toggleMenu} aria-label="Toggle menu">
             {isMenuOpen ? (
@@ -59,6 +78,7 @@ export const Header: React.FC = () => {
             )}
           </button>
         </div>
+
         {isMenuOpen && (
           <div className="md:hidden">
             <ul
