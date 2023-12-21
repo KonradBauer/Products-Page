@@ -15,7 +15,7 @@ See [Demo](https://konradbauer.github.io/Products-Page/)
 </div>
 
 ## Files Structure
-...
+```
 public/
 src/
 ├─ components/
@@ -64,8 +64,7 @@ tailwind.config.js
 tsconfig.json
 tsconfig.node.json
 vite.config.ts
-...
-
+```
 
 ## Technologies and libraries:
 - TypeScript
