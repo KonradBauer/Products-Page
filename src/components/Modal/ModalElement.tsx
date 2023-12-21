@@ -6,14 +6,14 @@ interface ModalElementProps {
 
 export const ModalElement: React.FC<ModalElementProps> = ({ hero, title, description }) => {
   return (
-    <div className="mt-12 mb-32 max-md:mt-4 flex justify-center">
+    <div className="max-md:mx-4">
       <div className="flex flex-col lg:flex-row gap-32 max-md:gap-2 items-start">
-        <img src={hero} className="max-w-2xl rounded-lg w-full lg:w-auto " />
+        <img src={hero} className="max-w-2xl rounded-lg w-full lg:w-auto" />
         <div className="text-left">
-          <h1 className="text-4xl font-bold mt-12 max-md:text-2xl text-left max-md:text-center">
+          <h1 className="text-4xl font-bold mt-12 text-left max-md:text-center max-md:text-xl">
             {title}
           </h1>
-          <p className="py-5 text-lightGrey font-semibold text-xl max-w-lg max-md:mx-0 max-md:text-[16px] max-md:text-center">
+          <p className="py-5 text-lightGrey font-semibold text-xl max-w-lg max-md:mx-0 max-md:text-[16px] max-md:text-center max-md:text-sm">
             {description}
           </p>
           <div className="mt-4 max-lg:flex justify-start max-md:hidden">
