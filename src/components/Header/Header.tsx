@@ -51,11 +51,11 @@ export const Header: React.FC = () => {
 
   return (
     <div className="relative">
-      {isMenuOpen && <div className="fixed inset-0 bg-darkBlue z-50" />}
+      {isMenuOpen && <div className="fixed inset-0 z-50 bg-darkBlue" />}
 
-      <div className="flex items-center justify-between mx-20 lg:p-6 font-rubik-500 max-md:mx-8 max-md:mt-2 relative z-50">
+      <div className="font-rubik-500 relative z-50 mx-20 flex items-center justify-between max-md:mx-8 max-md:mt-2 lg:p-6">
         {isMenuOpen && (
-          <div className="flex flex-row flex-1">
+          <div className="flex flex-1 flex-row">
             <img src={navbookmark} alt="Bookmark" />
           </div>
         )}
@@ -70,11 +70,19 @@ export const Header: React.FC = () => {
         </div>
 
         <div className="md:hidden">
-          <button className="burger-btn" onClick={toggleMenu} aria-label="Toggle menu">
+          <button
+            className="burger-btn"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
             {isMenuOpen ? (
               <img src={closeNav} alt="CloseButton" className="burger-btn" />
             ) : (
-              <img src={burgerButton} alt="BurgerButton" className="hamburger-icon" />
+              <img
+                src={burgerButton}
+                alt="BurgerButton"
+                className="hamburger-icon"
+              />
             )}
           </button>
         </div>
@@ -82,15 +90,20 @@ export const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <ul
-              className={`menu uppercase flex-col items-center absolute left-0 w-full bg-darkBlue opacity-100 mt-12 ${
+              className={`menu absolute left-0 mt-12 w-full flex-col items-center bg-darkBlue uppercase opacity-100 ${
                 isMenuOpen ? "h-screen min-h-screen" : ""
               }`}
             >
               {navigation.map((navi) => (
-                <li key={navi} className="border-b w-full items-center tracking-widest opa">
+                <li
+                  key={navi}
+                  className="opa w-full items-center border-b tracking-widest"
+                >
                   <a
-                    className={`hover:text-lightRed hover:bg-transparent font-bold p-4 ${
-                      isMenuOpen ? "text-white font-md rounded-none mt-4 font-normal text-xl" : ""
+                    className={`p-4 font-bold hover:bg-transparent hover:text-lightRed ${
+                      isMenuOpen
+                        ? "font-md mt-4 rounded-none text-xl font-normal text-white"
+                        : ""
                     }`}
                     onClick={() => {
                       toggleMenu();
@@ -101,14 +114,14 @@ export const Header: React.FC = () => {
                   </a>
                 </li>
               ))}
-              <button className="w-full border-2 py-1 rounded-md uppercase mt-8 text-xl bg-transparent text-white tracking-widest">
+              <button className="mt-8 w-full rounded-md border-2 bg-transparent py-1 text-xl uppercase tracking-widest text-white">
                 login
               </button>
-              <div className="flex justify-center mt-40 gap-6">
-                <a className="cursor-pointer mx-2">
+              <div className="mt-40 flex justify-center gap-6">
+                <a className="mx-2 cursor-pointer">
                   <Facebook />
                 </a>
-                <a className="cursor-pointer mx-2">
+                <a className="mx-2 cursor-pointer">
                   <Twitter />
                 </a>
               </div>
@@ -117,11 +130,11 @@ export const Header: React.FC = () => {
         )}
 
         <div className="hidden md:flex md:items-center md:space-x-6">
-          <ul className="menu menu-horizontal uppercase flex items-center">
+          <ul className="menu menu-horizontal flex items-center uppercase">
             {navigation.map((navi) => (
               <li key={navi}>
                 <a
-                  className="hover:text-lightRed hover:bg-transparent font-bold"
+                  className="font-bold hover:bg-transparent hover:text-lightRed"
                   onClick={() => {
                     scrollToSection(navi);
                   }}

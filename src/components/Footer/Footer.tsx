@@ -43,7 +43,8 @@ export const Footer: React.FC<FooterProps> = () => {
     }));
   };
 
-  const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validateEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleButtonClick = () => {
     const isValid = validateEmail(state.email);
@@ -72,7 +73,7 @@ export const Footer: React.FC<FooterProps> = () => {
       setState((prevState) => {
         const newPopulation = Math.max(
           0,
-          parseFloat(prevState.populationText) - decrementPerSecond
+          parseFloat(prevState.populationText) - decrementPerSecond,
         );
         return {
           ...prevState,
@@ -97,19 +98,19 @@ export const Footer: React.FC<FooterProps> = () => {
   return (
     <>
       <div
-        className="bg-lightBlue text-white flex flex-col items-center p-4 max-sm:pb-0 flex-wrap font-rubik-500"
+        className="font-rubik-500 flex flex-col flex-wrap items-center bg-lightBlue p-4 text-white max-sm:pb-0"
         id="contact"
       >
-        <span className="text-sm font-normal uppercase tracking-widest w-full flex justify-center mt-14">
+        <span className="mt-14 flex w-full justify-center text-sm font-normal uppercase tracking-widest">
           {state.populationText}
         </span>
-        <span className="text-3xl max-sm:text-2xl flex justify-center text-center mt-10 mb-6 max-sm:mt-2 mx-0 font-bold tracking-wide lg:max-w-md">
+        <span className="mx-0 mb-6 mt-10 flex justify-center text-center text-3xl font-bold tracking-wide max-sm:mt-2 max-sm:text-2xl lg:max-w-md">
           Stay up-to-date with what we're doing
         </span>
-        <div className="max-sm:flex-wrap mb-16 lg:w-2/4 flex justify-center items-center relative">
-          <div className="max-md:flex-1 mx-4 relative">
+        <div className="relative mb-16 flex items-center justify-center max-sm:flex-wrap lg:w-2/4">
+          <div className="relative mx-4 max-md:flex-1">
             <input
-              className={`input rounded-md w-full max-sm:w-full text-black lg:mr-4 pr-10  ${
+              className={`input w-full rounded-md pr-10 text-black max-sm:w-full lg:mr-4  ${
                 state.isValidEmail === false ? "border-error" : ""
               }`}
               placeholder="Enter your email address"
@@ -117,35 +118,47 @@ export const Footer: React.FC<FooterProps> = () => {
               onChange={handleEmailChange}
             />
             {state.isValidEmail === false && (
-              <div className="absolute right-0 top-1.5 mt-2 mr-2">
+              <div className="absolute right-0 top-1.5 mr-2 mt-2">
                 <Error />
               </div>
             )}
             {state.isValidEmail === false && (
-              <div className="w-full bg-lightRed px-6 mb-4 rounded-md">
+              <div className="mb-4 w-full rounded-md bg-lightRed px-6">
                 Whoops! Make sure it's an email.
               </div>
             )}
           </div>
 
-          <Button text="contact us" specialWidth marginTop capitalize onClick={handleButtonClick} />
+          <Button
+            text="contact us"
+            specialWidth
+            marginTop
+            capitalize
+            onClick={handleButtonClick}
+          />
         </div>
       </div>
 
       {state.showToast && (
         <div className="fixed bottom-4 right-4 z-50">
-          <div className="bg-green-500 text-white py-2 px-4 rounded">Success!</div>
+          <div className="rounded bg-green-500 px-4 py-2 text-white">
+            Success!
+          </div>
         </div>
       )}
 
-      <div className="navbar flex flex-col lg:flex-row justify-between tracking-wider bg-darkBlue p-6 lg:px-[56px] sm:flex-wrap font-bold">
-        <img src={bookmark} alt="Bookmark" className="bookmark-icon text-white" />
-        <div className="mx-8 lg:mx-12 p-4 lg:p-6 flex flex-1">
-          <ul className="menu menu-horizontal uppercase gap-6 flex mt-4 lg:mt-0 lg:ml-10 max-md:flex-col items-center">
+      <div className="navbar flex flex-col justify-between bg-darkBlue p-6 font-bold tracking-wider sm:flex-wrap lg:flex-row lg:px-[56px]">
+        <img
+          src={bookmark}
+          alt="Bookmark"
+          className="bookmark-icon text-white"
+        />
+        <div className="mx-8 flex flex-1 p-4 lg:mx-12 lg:p-6">
+          <ul className="menu menu-horizontal mt-4 flex items-center gap-6 uppercase max-md:flex-col lg:ml-10 lg:mt-0">
             {navigation.map((navi) => (
               <li key={navi.key}>
                 <a
-                  className="text-lightGrey hover:text-lightRed hover:bg-transparent"
+                  className="text-lightGrey hover:bg-transparent hover:text-lightRed"
                   onClick={() => scrollToSection(navi.key)}
                 >
                   {navi.key}
@@ -154,7 +167,7 @@ export const Footer: React.FC<FooterProps> = () => {
             ))}
           </ul>
         </div>
-        <div className="flex gap-10 mx-6">
+        <div className="mx-6 flex gap-10">
           <a className="cursor-pointer">
             <Facebook />
           </a>

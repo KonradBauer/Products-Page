@@ -16,16 +16,22 @@ export const Card: React.FC<CardProps> = ({
   customClassName,
 }) => {
   return (
-    <div className={`card w-80 bg-base-100 shadow-xl font-rubik-500 ${customClassName || ""}`}>
+    <div
+      className={`font-rubik-500 card w-80 bg-base-100 shadow-xl ${
+        customClassName || ""
+      }`}
+    >
       <figure className="px-10 pt-10">
         <img src={image} alt={alt} className="rounded-xl" />
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className="card-title font-bold text-[21px]">Add to {searchEngine}</h2>
+        <h2 className="card-title text-[21px] font-bold">
+          Add to {searchEngine}
+        </h2>
         <p className="mb-6 text-lightGrey">Minimum version {version}</p>
         <div className="card-actions">
           <img src={ornament} alt="ornament" className="mb-3" />
-          <button className="btn btn-primary w-full font-bold bg-lightBlue border-lightBlue hover:bg-white hover:text-lightBlue hover:border-lightBlue">
+          <button className="btn btn-primary w-full border-lightBlue bg-lightBlue font-bold hover:border-lightBlue hover:bg-white hover:text-lightBlue">
             Add & Install Extension
           </button>
         </div>

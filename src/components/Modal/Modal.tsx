@@ -5,7 +5,7 @@ export const Modal = () => {
   return (
     <div>
       <dialog id="modal" className="modal max-md:px-10">
-        <div className="bg-white p-4 rounded-lg max-md:p-2">
+        <div className="rounded-lg bg-white p-4 max-md:p-2">
           <p className="py-4 max-md:p-0">
             <ModalElement
               hero={heroThird}
@@ -13,7 +13,7 @@ export const Modal = () => {
               description="Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button."
             />
           </p>
-          <div className="modal-action flex justify-end mt-4">
+          <div className="modal-action mt-4 flex justify-end">
             <form method="dialog">
               <button className="btn">Close</button>
             </form>

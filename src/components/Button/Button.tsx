@@ -21,7 +21,7 @@ export const Button: React.FC<ButtonProps> = ({
       ${width ? "max-sm:w-[95%]" : ""}
       ${marginTop ? "max-sm:mt-4" : ""}
       ${specialWidth ? "max-sm:w-[91%]" : ""}
-      text-white px-10 pt-1 tracking-wider shadow-lg hover:bg-white hover:text-lightRed hover:`}
+      hover: px-10 pt-1 tracking-wider text-white shadow-lg hover:bg-white hover:text-lightRed`}
       onClick={onClick}
     >
       {text}

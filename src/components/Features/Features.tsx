@@ -51,24 +51,27 @@ export const Features: React.FC = () => {
     "text-lightRed border-lightRed hover:text-red-500 focus:border-b-1 border-red-500";
 
   return (
-    <div className="text-center font-rubik-500 mt-24" id="features">
-      <div className="text-[42px] font-bold max-md:text-[25px] max-md:mx-2">Features</div>
-      <div className="text-2xl text-lightGrey font-semibold mx-96 mt-6 mb-24 max-md:mb-8 max-md:text-[16px] max-md:mx-8 max-lg:mx-24">
-        Our aim is to make it quick and easy for you to access your favourite websites. Your
-        bookmarks sync between your devices so you can access them on the go.
+    <div className="font-rubik-500 mt-24 text-center" id="features">
+      <div className="text-[42px] font-bold max-md:mx-2 max-md:text-[25px]">
+        Features
+      </div>
+      <div className="mx-96 mb-24 mt-6 text-2xl font-semibold text-lightGrey max-lg:mx-24 max-md:mx-8 max-md:mb-8 max-md:text-[16px]">
+        Our aim is to make it quick and easy for you to access your favourite
+        websites. Your bookmarks sync between your devices so you can access
+        them on the go.
       </div>
       <div
         className={
-          "tabs tabs-bordered mx-6 sm:mx-72 flex flex-col items-center sm:flex-row sm:justify-center"
+          "tabs tabs-bordered mx-6 flex flex-col items-center sm:mx-72 sm:flex-row sm:justify-center"
         }
       >
         {tabs.map((tab) => (
           <React.Fragment key={tab.label}>
             <label
-              className={`tab text-xl pb-14 cursor-pointer font-semibold border-red relative max-md:pt-4 ${
+              className={`border-red tab relative cursor-pointer pb-14 text-xl font-semibold max-md:pt-4 ${
                 tab.label === selectedTab
-                  ? `text-black font-bold border-b-1 ${redColor}`
-                  : "text-lightGrey hover:text-lightRed border-lightRed"
+                  ? `border-b-1 font-bold text-black ${redColor}`
+                  : "border-lightRed text-lightGrey hover:text-lightRed"
               } w-72`}
             >
               <input
@@ -81,7 +84,7 @@ export const Features: React.FC = () => {
                 onChange={() => setSelectedTab(tab.label)}
               />
               {tab.label === selectedTab && (
-                <div className="absolute inset-x-0 bottom-0 h-1 bg-lightRed md-max:p-4"></div>
+                <div className="md-max:p-4 absolute inset-x-0 bottom-0 h-1 bg-lightRed"></div>
               )}
               {tab.label}
             </label>
@@ -93,7 +96,9 @@ export const Features: React.FC = () => {
           <div
             key={tab.label}
             role="tabpanel"
-            className={`tab-content p-10 ${tab.label === selectedTab ? "block" : "hidden"}`}
+            className={`tab-content p-10 ${
+              tab.label === selectedTab ? "block" : "hidden"
+            }`}
           >
             {tab.content}
           </div>
