@@ -69,7 +69,7 @@ export const Features: React.FC = () => {
                 tab.label === selectedTab
                   ? `text-black font-bold border-b-1 ${redColor}`
                   : "text-lightGrey hover:text-lightRed border-lightRed"
-              }`}
+              } w-72`} // Tailwind CSS class for width: 300px
             >
               <input
                 type="radio"
