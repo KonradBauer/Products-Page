@@ -10,7 +10,9 @@ export const FeatureElement: React.FC<FeatureElementProps> = ({ hero, title, des
       <div className="flex flex-col lg:flex-row gap-32 max-md:gap-2 items-start">
         <img src={hero} className="max-w-2xl rounded-lg w-full lg:w-auto" />
         <div className="text-left">
-          <h1 className="text-4xl font-bold mt-16 max-md:text-2xl text-left">{title}</h1>
+          <h1 className="text-4xl font-bold mt-12 max-md:text-2xl text-left max-md:text-center">
+            {title}
+          </h1>
           <p className="py-5 text-lightGrey font-semibold text-xl max-w-lg max-md:mx-0 max-md:text-[16px] max-md:text-center">
             {description}
           </p>
