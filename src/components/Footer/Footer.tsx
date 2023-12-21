@@ -107,23 +107,27 @@ export const Footer: React.FC<FooterProps> = () => {
           Stay up-to-date with what we're doing
         </span>
         <div className="max-sm:flex-wrap mb-16 lg:w-2/4 flex justify-center items-center relative">
-          <div className="max-md:flex-1 mx-4">
+          <div className="max-md:flex-1 mx-4 relative">
             <input
-              className={`input rounded-md w-full max-sm:w-[100%] text-black lg:mr-4  ${
-                state.isValidEmail === false ? <Error /> : ""
+              className={`input rounded-md w-full max-sm:w-full text-black lg:mr-4 pr-10  ${
+                state.isValidEmail === false ? "border-error" : ""
               }`}
               placeholder="Enter your email address"
               value={state.email}
               onChange={handleEmailChange}
             />
             {state.isValidEmail === false && (
-              <div>
-                <div className="w-full bg-lightRed px-6 mb-4 rounded-md">
-                  Whoops! Make sure it's an email.
-                </div>
+              <div className="absolute right-0 top-1.5 mt-2 mr-2">
+                <Error />
+              </div>
+            )}
+            {state.isValidEmail === false && (
+              <div className="w-full bg-lightRed px-6 mb-4 rounded-md">
+                Whoops! Make sure it's an email.
               </div>
             )}
           </div>
+
           <Button text="contact us" specialWidth marginTop capitalize onClick={handleButtonClick} />
         </div>
       </div>
