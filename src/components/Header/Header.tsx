@@ -67,7 +67,7 @@ export const Header: React.FC = () => {
               }`}
             >
               {navigation.map((navi) => (
-                <li key={navi}>
+                <li key={navi} className="border-b w-full items-center tracking-widest opa">
                   <a
                     className={`hover:text-lightRed hover:bg-transparent font-bold p-4 ${
                       isMenuOpen ? "text-white font-md rounded-none mt-4 font-normal text-xl" : ""
@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
                   </a>
                 </li>
               ))}
-              <button className="w-full border-2 py-2 rounded-md uppercase mt-4 text-xl bg-transparent text-white">
+              <button className="w-full border-2 py-1 rounded-md uppercase mt-8 text-xl bg-transparent text-white tracking-widest">
                 login
               </button>
               <div className="flex justify-center mt-40 gap-6">
