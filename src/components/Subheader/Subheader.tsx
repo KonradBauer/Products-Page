@@ -5,7 +5,7 @@ export const Subheader = () => {
     <div className="flex mt-12 mb-10 max-md:mt-16 relative">
       <div className="hero">
         <div className="hero-content flex-col lg:flex-row-reverse gap-12">
-          <div className="absolute bg-lightBlue h-96 mt-44 w-[40%] right-0 rounded-l-full max-md:w-[83%] max-md:h-48 max-md:mt-0 max-md:mb-72" />
+          <div className="absolute bg-lightBlue h-96 mt-44 w-[40%] right-0 rounded-l-full max-md:w-[83%] max-md:h-48 max-md:mt-0 max-md:mb-72 max-lg:mb-64 max-lg:w-[70%] max-lg:mt-0" />
           <img src={hero} className="max-w-2xl rounded-lg w-full relative" />
           <div>
             <h1 className="text-5xl font-bold max-w-lg max-md:text-[28px] max-md:flex max-lg:text-center max-md:justify-center">
