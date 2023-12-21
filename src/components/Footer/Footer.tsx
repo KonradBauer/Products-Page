@@ -111,14 +111,7 @@ export const Footer: React.FC<FooterProps> = () => {
               </div>
             )}
           </div>
-          <Button
-            text="contact us"
-            specialWidth
-            marginTop
-            capitalize
-            width
-            onClick={handleButtonClick}
-          />
+          <Button text="contact us" specialWidth marginTop capitalize onClick={handleButtonClick} />
         </div>
       </div>
 
