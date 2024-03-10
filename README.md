@@ -1,8 +1,8 @@
-# Products Page - Confilogi Group Recruitment Task
+# Products Page 
 
-This page is a recruitment task for Confilogi Group.
+## This page is a template page of product app.
 
-See [Demo](https://konradbauer.github.io/Products-Page/)
+## See [Demo](https://konradbauer.github.io/Products-Page/)
 
 ## Desktop view:
 
