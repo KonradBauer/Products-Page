@@ -46,9 +46,11 @@ export const Header: React.FC = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       openModal();
     }, 30000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
