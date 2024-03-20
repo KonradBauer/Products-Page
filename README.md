@@ -1,4 +1,4 @@
-# Products Page 
+# Products Landing Page 
 
 ## This page is a template page of product app. After 30 secons you will see a pop-up Modal. This modal will be again pop-up if you hover on top of the page.
 
